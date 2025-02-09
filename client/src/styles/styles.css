@@ -4,11 +4,20 @@ body {
     padding: 0;
 }
 
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
     margin-top: 20px;
     padding: 10px;
     width: 100%;
@@ -125,27 +134,3 @@ body {
     height: 80px;
 }
 
-
-/*Adding media query for mobile devices*/
-@media (max-width: 600px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .style-button {
-        margin-top: 10px;
-    }
-
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .patient-card,
-    .individual-card {
-        width: 90%;
-        max-width: 300px;
-    }
-}
