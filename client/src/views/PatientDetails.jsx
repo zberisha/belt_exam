@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom'; 
 import '../styles/styles.css';
+import baby from '../assets/baby.png';  
+import old from '../assets/old.png';
 
 const PatientDetails = ({ onUpdated }) => {
-    const { id } = useParams(); // Get patient ID from URL
+    const { id } = useParams(); 
     const [patient, setPatient] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -57,6 +59,11 @@ const PatientDetails = ({ onUpdated }) => {
             {patient ? (
                 <div className='individual-card'>
                     <p className='age'>{patient.age} years of age</p>
+                        {patient.age < 3 ? (
+                            <img className='image' src={baby} alt='baby' />
+                        ) : patient.age > 82 ? (
+                            <img className='image' src={old} alt='old' />
+                        ) : null}
                     <p className='symptoms'>Symptoms: {patient.symptoms}</p>
                     <button className='style-button' onClick={handleDelete}>Discharge patient</button> 
                 </div>

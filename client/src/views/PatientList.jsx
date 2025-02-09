@@ -29,11 +29,11 @@ const PatientList = ({ onUpdated }) => {
     return (
         <div>
             <div className="header">
-                <Link to="/">
+                <Link to="/patients">
                     <button className='style-button' >Home</button>
                 </Link>
-                <h1>Hospital Manager</h1>
-                <Link to="/add">
+                <h1>Displaying {patients.length} patients</h1>
+                <Link to="/">
                     <button className='style-button'>Admit</button>
                 </Link>
             </div>
